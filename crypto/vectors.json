@@ -1,0 +1,205 @@
+{
+  "source": "awaken-journal public/js/crypto.js @ e5b7cd9 (frozen, run unmodified)",
+  "params": {
+    "kdf": "argon2id v=19",
+    "memoryKiB": 19456,
+    "iterations": 2,
+    "parallelism": 1,
+    "hashLength": 32,
+    "aead": "AES-256-GCM",
+    "ivBytes": 12,
+    "tagBytes": 16,
+    "aad": "none",
+    "passwordEncoding": "UTF-8, NO Unicode normalisation",
+    "base64": "standard alphabet, WITH padding",
+    "sealedFormat": "base64( iv[12] || ciphertext || tag[16] )",
+    "authHashFormat": "argon2 PHC encoded string exactly as hash-wasm emits it (salt/hash base64 WITHOUT padding)"
+  },
+  "account": [
+    {
+      "id": "A1-ascii",
+      "passwordUtf8Hex": "636f727265637420686f727365206261747465727920737461706c65",
+      "password": "correct horse battery staple",
+      "authSaltHex": "000102030405060708090a0b0c0d0e0f",
+      "encSaltHex": "101112131415161718191a1b1c1d1e1f",
+      "masterKeyHex": "202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "masterKeyIvHex": "404142434445464748494a4b",
+      "signupBody": {
+        "authHash": "$argon2id$v=19$m=19456,t=2,p=1$AAECAwQFBgcICQoLDA0ODw$gYJZtjEAJqjg26xdLmknq8/bB7MiWPrE9hsYuA+SkIU",
+        "authSalt": "AAECAwQFBgcICQoLDA0ODw==",
+        "encSalt": "EBESExQVFhcYGRobHB0eHw==",
+        "encryptedMasterKey": "QEFCQ0RFRkdISUpLwOtS4pRfOvYrqys5K3v90nWfPWRKyNJnSNZRYj/jR1jryPoOUK77Go4Kn/5ChRGp"
+      },
+      "loginAuthHashMatchesSignup": true,
+      "loginUnsealedMasterKeyHex": "202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f"
+    },
+    {
+      "id": "A2-unicode-nfc",
+      "passwordUtf8Hex": "50c3a4737377c3b6726420e29c9320e0a4aae0a4bee0a4b8e0a4b5e0a4b0e0a58de0a4a120f09f9490",
+      "password": "Pässwörd ✓ पासवर्ड 🔐",
+      "authSaltHex": "0102030405060708090a0b0c0d0e0f10",
+      "encSaltHex": "1112131415161718191a1b1c1d1e1f20",
+      "masterKeyHex": "2122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f40",
+      "masterKeyIvHex": "4142434445464748494a4b4c",
+      "signupBody": {
+        "authHash": "$argon2id$v=19$m=19456,t=2,p=1$AQIDBAUGBwgJCgsMDQ4PEA$jFZmbVWbK4cp3S2VEfl5if0eBeVvsL1DBWqaTGqxQxc",
+        "authSalt": "AQIDBAUGBwgJCgsMDQ4PEA==",
+        "encSalt": "ERITFBUWFxgZGhscHR4fIA==",
+        "encryptedMasterKey": "QUJDREVGR0hJSktMUlwLxebSAhZNVatGngHmMxfxIXilltkmzGcktROuau3kKtbNqiweijiZcyiDsvN9"
+      },
+      "loginAuthHashMatchesSignup": true,
+      "loginUnsealedMasterKeyHex": "2122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f40"
+    },
+    {
+      "id": "A3-cafe-nfc",
+      "passwordUtf8Hex": "636166c3a9",
+      "password": "café",
+      "authSaltHex": "02030405060708090a0b0c0d0e0f1011",
+      "encSaltHex": "12131415161718191a1b1c1d1e1f2021",
+      "masterKeyHex": "22232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f4041",
+      "masterKeyIvHex": "42434445464748494a4b4c4d",
+      "signupBody": {
+        "authHash": "$argon2id$v=19$m=19456,t=2,p=1$AgMEBQYHCAkKCwwNDg8QEQ$CW3Dcl++e+CTlD6V/TA/jTGGNR3Cw48g/5hWu7jOKLw",
+        "authSalt": "AgMEBQYHCAkKCwwNDg8QEQ==",
+        "encSalt": "EhMUFRYXGBkaGxwdHh8gIQ==",
+        "encryptedMasterKey": "QkNERUZHSElKS0xNXgxsmJx+x8qZ80LfeTVhHkDq3sh/rqNZPDMZh5Hy9M7vYtUyVIsMW1dxmZDMmASG"
+      },
+      "loginAuthHashMatchesSignup": true,
+      "loginUnsealedMasterKeyHex": "22232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f4041"
+    },
+    {
+      "id": "A4-cafe-nfd",
+      "passwordUtf8Hex": "63616665cc81",
+      "password": "café",
+      "authSaltHex": "02030405060708090a0b0c0d0e0f1011",
+      "encSaltHex": "12131415161718191a1b1c1d1e1f2021",
+      "masterKeyHex": "22232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f4041",
+      "masterKeyIvHex": "42434445464748494a4b4c4d",
+      "signupBody": {
+        "authHash": "$argon2id$v=19$m=19456,t=2,p=1$AgMEBQYHCAkKCwwNDg8QEQ$A9pXB43ZQDXszcTq5IaTK/xL6TUrPUnxt6Z7D/iP0lM",
+        "authSalt": "AgMEBQYHCAkKCwwNDg8QEQ==",
+        "encSalt": "EhMUFRYXGBkaGxwdHh8gIQ==",
+        "encryptedMasterKey": "QkNERUZHSElKS0xNPTOwi//9FAxV9YhDjL9/yiA/KSC8kXB6p3fsGvwHSF9Lz7btRWGrQIilHiW1d36l"
+      },
+      "loginAuthHashMatchesSignup": true,
+      "loginUnsealedMasterKeyHex": "22232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f4041"
+    },
+    {
+      "id": "A5-long-200",
+      "passwordUtf8Hex": "614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721614a3721",
+      "password": "aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!aJ7!",
+      "authSaltHex": "0405060708090a0b0c0d0e0f10111213",
+      "encSaltHex": "1415161718191a1b1c1d1e1f20212223",
+      "masterKeyHex": "2425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f40414243",
+      "masterKeyIvHex": "4445464748494a4b4c4d4e4f",
+      "signupBody": {
+        "authHash": "$argon2id$v=19$m=19456,t=2,p=1$BAUGBwgJCgsMDQ4PEBESEw$zAJIzlrKAw5JGMKRuTlTJ7MbDqBwIhq7GQTa1HKLByI",
+        "authSalt": "BAUGBwgJCgsMDQ4PEBESEw==",
+        "encSalt": "FBUWFxgZGhscHR4fICEiIw==",
+        "encryptedMasterKey": "REVGR0hJSktMTU5PNj2rclaT597kIrIRrKSCn9apXpmFo5D9BNEsJsWZv3x5c2YeDlQcVGHu3C/NzEkW"
+      },
+      "loginAuthHashMatchesSignup": true,
+      "loginUnsealedMasterKeyHex": "2425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f40414243"
+    }
+  ],
+  "content": [
+    {
+      "id": "C1-empty",
+      "masterKeyHex": "202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "ivHex": "505152535455565758595a5b",
+      "plaintext": "",
+      "plaintextUtf8Hex": "",
+      "sealed": "UFFSU1RVVldYWVpbU+CFuLMiJ9oudrsye5jbzg==",
+      "roundTrip": true
+    },
+    {
+      "id": "C2-ascii",
+      "masterKeyHex": "202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "ivHex": "5152535455565758595a5b5c",
+      "plaintext": "Hello",
+      "plaintextUtf8Hex": "48656c6c6f",
+      "sealed": "UVJTVFVWV1hZWltcDbZFeWZFBdXWCghw74l6RPGwysWj",
+      "roundTrip": true
+    },
+    {
+      "id": "C3-journal-md",
+      "masterKeyHex": "202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "ivHex": "52535455565758595a5b5c5d",
+      "plaintext": "# Today\n\n- grateful for **tea** ☕\n- नमस्ते 🌅\n\n> \"quoted\"\ttab",
+      "plaintextUtf8Hex": "2320546f6461790a0a2d20677261746566756c20666f72202a2a7465612a2a20e298950a2d20e0a4a8e0a4aee0a4b8e0a58de0a4a4e0a58720f09f8c850a0a3e202271756f7465642209746162",
+      "sealed": "UlNUVVZXWFlaW1xdJliREuBEBhSxKFDjSGYoJbo9RO4S4uiWIXZf6hqYo2/UYdqM4YPrO2tRIieEo3KGKZ/UCS0litSHlrl94uLRIFbcjlQECO2pGQ1O6/2e7j8toBVaJJ3TrZgKIIvK",
+      "roundTrip": true
+    },
+    {
+      "id": "C4-1KiB",
+      "masterKeyHex": "202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "ivHex": "535455565758595a5b5c5d5e",
+      "plaintext": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "plaintextUtf8Hex": "78787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878",
+      "sealed": "U1RVVldYWVpbXF1ekkdp3Bh++Wktoz2R6Dua+gBDGVgOQUg+9uX0D1uE7wpmDVJ2yVd/6CFV9nPKUBWTI+HajvysYZQplwEdDxOKZQBGjzIv8OFKtGu2yVwD0lR/gqTmhTIBVrWpFtFCb6/MNsZtLqgffHSXxPKnSolWh3rCxlFfipMW4GMENO/kap1yM+EmumuUcYk0vV64uNRW6T2KoMmRwukblG8/D/XRVHQQF4CihJPL02+sht1DxIi1UENj11a2k9rkSrk++4F3e8bR9cu6O7EAW8Izyo6RTqamN++B7y6BJ0Nf8E4C5ABP/0U5g1LDszoJH3KiT3vNQRDtpyv2G9dFb6z9+QGY8BGxOExuPaQv/X0vHGDskLZOuxpdgZfKwTMq7oy/XDdZqI4EsN6NZlvXvo2x3ocYQDRIeGP0OzVGCOdsCarVVdGZCKYa0cUeGSZ7UTBq5l/AbwmSqugLbS62Xke2RDrdHyJuJ8EhhL8/Plahq3JlcZ9EcLjyuleb+MRfZbwQlJX9Sax90q1dDUhz2dU/2MbUTcb+28GPX7tlUnWcB0gw8SeZcmJltU6ewFz+ibWRqkUwBMTl1n/Qqs9gsKHUJfHD+VgN7BhLqC533G4OActSBD1slVng9SLspAt/YYCPogBq2hD+/hjAd4ulPFgWaDyCyRV7lvQXP/L4Qt4aFjuMpzaR+DGkviSnS7hxhLjUjIK4i29XpIoRySZMEAJb6MkzYULGV7TMW692lNZvXUib7cs9o+I7Jc6bE33vRC1kILDSq4rWEKg4KSLH7rsQP1SjvmeK5Y0eg90BxRpQiGG14Og7iQsZsYrYW3TNxEnPIz8gZYgfIN1vopTD9NwZXu1st/HOZo/dFRj51WcW0Eko8TdUztwnmiy0KG/gj8GwQgPn3pDW7TGpkyMcQEeER8ovjqNp+yqJ/S9Wf8Z50+GX17Z9wGm4EIRWG6Mpw2DiOp8bvNU3FKKf4aae1PgOvgJG8H9dcoi3BIEnDTP+bK/yhgyVO3/6dZvuD5JHIMdGc4PZUbPlYteHU5IsDVrURoIAe+wDIwG0GVjZlQcnvmpPyiVH1MBReaxeuqNRBm6oz3tPDz/UOND26GZLcdKch6CpjmhI0atgGd6sTh9dx4j0KdQVIJcxgz18sTh/yw60uMfDGQIpMeWLfvoqLArTtPKBqjbFsfPaFiu3o2pKqNawwiqOk2Jdg9xrfqro+O3Bj93uSYPLjn2+PpL4kReGvIjt0b6zV06ER6XyOLK4Peue9XKAHXzkawgDwk4twoX+BW8z+SCPOCI5cpYPeWMWfKpMpKBb/XP0QbZuJxqONhbkMQdl8s5gwupO5tBZfW8fy619t0Y+wT/bDWnnaFCHERgNimhxfPMGPEd5bYeZNiSg7vA=",
+      "roundTrip": true
+    }
+  ],
+  "backup": [
+    {
+      "id": "B1",
+      "password": "correct horse battery staple",
+      "saltHex": "606162636465666768696a6b6c6d6e6f",
+      "ivHex": "707172737475767778797a7b",
+      "plaintext": "{\"version\":1,\"data\":{\"entry\":[{\"id\":\"vec\",\"ciphertext\":\"x\"}]}}",
+      "file": {
+        "version": 1,
+        "salt": "YGFiY2RlZmdoaWprbG1ubw==",
+        "iv": "cHFyc3R1dnd4eXp7",
+        "ciphertext": "clpF3OXNGll6rCq6HJS6AzeWsjQP/Y0xrVi8pVO0DM4gQcN3bzfeZcCxc2VniXjkqArvTkojXH1y8d2/wxyKS8rVNIwqFTPXMhJ2js0T"
+      },
+      "roundTrip": true
+    }
+  ],
+  "oauth": [
+    {
+      "id": "O1",
+      "passphrase": "vault passphrase for vectors",
+      "encSaltHex": "808182838485868788898a8b8c8d8e8f",
+      "masterKeyHex": "909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeaf",
+      "masterKeyIvHex": "b0b1b2b3b4b5b6b7b8b9babb",
+      "body": {
+        "username": "vec_oauth",
+        "encSalt": "gIGCg4SFhoeIiYqLjI2Ojw==",
+        "encryptedMasterKey": "sLGys7S1tre4ubq7+FOFHfIjJUAB/rl9VWKmPZRZhb0t3AhUtsaYJc3+FmdgYV8OeA31MZCNRJDpbf6J"
+      },
+      "unsealedMasterKeyHex": "909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeaf"
+    }
+  ],
+  "negative": [
+    {
+      "id": "N1-flipped-tag-bit",
+      "sealed": "UVJTVFVWV1hZWltcDbZFeWZFBdXWCghw74l6RPGwysWi",
+      "mustFail": true
+    },
+    {
+      "id": "N2-flipped-ciphertext-bit",
+      "sealed": "UVJTVFVWV1hZWltcDLZFeWZFBdXWCghw74l6RPGwysWj",
+      "mustFail": true
+    },
+    {
+      "id": "N3-flipped-iv-bit",
+      "sealed": "UFJTVFVWV1hZWltcDbZFeWZFBdXWCghw74l6RPGwysWj",
+      "mustFail": true
+    },
+    {
+      "id": "N4-wrong-master-key",
+      "sealed": "UVJTVFVWV1hZWltcDbZFeWZFBdXWCghw74l6RPGwysWj",
+      "wrongKeyHex": "2122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f40",
+      "mustFail": true
+    },
+    {
+      "id": "N5-backup-wrong-password",
+      "mustFail": true
+    },
+    {
+      "id": "N6-wrong-password-unseal",
+      "mustFail": true
+    }
+  ]
+}

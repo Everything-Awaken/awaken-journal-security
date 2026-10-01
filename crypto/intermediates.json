@@ -1,0 +1,36 @@
+{
+  "account": [
+    {
+      "id": "A1-ascii",
+      "encKeyHex": "2a45fe290a3d07e80c1c9e1017ec44fc4f3c6456ceb21455c733900278f1c374"
+    },
+    {
+      "id": "A2-unicode-nfc",
+      "encKeyHex": "20d764b7b28689b6e34ea9c0043e1cb4a2b8baf8797df4c587235053d2ab7ce7"
+    },
+    {
+      "id": "A3-cafe-nfc",
+      "encKeyHex": "c5bc45667e12ddb37f032153eb8259ef7fdebdd874de4cd88552d28d4c6d9bd7"
+    },
+    {
+      "id": "A4-cafe-nfd",
+      "encKeyHex": "390a823f48c63d6cb52493ff55a1e0363b09eed2dd872e59814f22275cd5d0aa"
+    },
+    {
+      "id": "A5-long-200",
+      "encKeyHex": "54ad510e501263ee4ee9f4876e951bcbd63150bd93d91fef9ed79c08af82d230"
+    }
+  ],
+  "backup": [
+    {
+      "id": "B1",
+      "keyHex": "67741b8b980556482c28e7d8bf3c7b56846ef3f9fd65fe2bb0648d4c70cd0c4c"
+    }
+  ],
+  "oauth": [
+    {
+      "id": "O1",
+      "encKeyHex": "1d2363b6965c25f7d42682fb50d033c4802ed15b2d9d998573018747a661753f"
+    }
+  ]
+}
