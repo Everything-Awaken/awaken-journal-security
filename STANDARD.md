@@ -1,12 +1,12 @@
 # The Awaken Journal Standard
 
-*Privacy Protocol v1.1 · Security Protocol v1.2 · Last verified against our running code: 1 October 2026*
+*Verified against our running code · 1 October 2026*
 
 **A journal is the most private thing a person owns.** Most of us hesitate to show our diary even to someone close. So before you write the true thing, you deserve to know exactly who could ever read it. This page is that answer, in full: the rules Awaken Journal is built to, in plain words first, with the technical detail one tap below for anyone who wants to check.
 
 > Mirror of [everythingawaken.com/journal/standard/](https://everythingawaken.com/journal/standard/). The website is the source; this file is regenerated from it, never edited by hand.
 
-**On this page:** [Part 1 · The Privacy Protocol](#part-1--the-privacy-protocol) — what we protect, from whom, and what we can and can't see. [Part 2 · The Security Protocol](#part-2--the-security-protocol) — the 47 controls that keep that promise true in practice. [Change log](#change-log).
+**On this page:** [Part 1 · The Privacy Protocol](#part-1--the-privacy-protocol) (v1.1) — what we protect, from whom, and what we can and can't see. [Part 2 · The Security Protocol](#part-2--the-security-protocol) (v1.2) — the 47 controls that keep that promise true in practice. [Change log](#change-log).
 
 ## Part 1 · The Privacy Protocol
 
@@ -196,11 +196,12 @@ We'd rather you verify than trust.
 
 - Open your browser's developer tools, watch the network tab while you write an entry, and see what leaves your device: unreadable ciphertext.
 - The standards we follow are public: [Argon2 (RFC 9106)](https://www.rfc-editor.org/rfc/rfc9106.html) · [AES-GCM (NIST SP 800-38D)](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38d.pdf) · [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/).
-- Our code isn't public yet — we're deciding how to open it, and this line will change when we do.
+- Our encryption code, its test vectors and an independent checker that re-derives every one of them are public: [github.com/Everything-Awaken/awaken-journal-security](https://github.com/Everything-Awaken/awaken-journal-security). The rest of the app's code is private for now.
 - Found something? Tell us first through [security.txt](https://journal.everythingawaken.com/.well-known/security.txt).
 The legal versions of all this: [Privacy Policy](https://everythingawaken.com/journal/privacy) · [Your Data Stays Yours](https://everythingawaken.com/journal/security) · [Terms](https://everythingawaken.com/journal/terms). The story behind it, question by question: [The Philosophy of Awaken Journal](https://everythingawaken.com/journal/guide/).
 
 ## Change log
 
+- **1 October 2026** — Encryption code, test vectors and independent checker published on [GitHub](https://github.com/Everything-Awaken/awaken-journal-security).
 - **1 October 2026** — First public edition. Privacy Protocol v1.1, Security Protocol v1.2. Same day: the Notes "Awaken Server" plain copy found and removed (Part 1, Notes); the full list of what we can see completed; minimum age set at 14.
 We re-verify this page against our code at every app release and every change to either protocol, and update the date at the top when we do.
