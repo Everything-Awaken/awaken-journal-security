@@ -30,7 +30,7 @@ On a normal day that means: if someone stole our server tonight, they would get 
 
 - **Argon2id** derives both values from your password (19 MiB memory, 2 iterations, parallelism 1 — the OWASP baseline), in your browser.
 - **Two independent salts:** one derives the login proof sent to us; the other derives the encryption key, which is never transmitted. Nothing we store lets us derive the key.
-- A **pepper** — a server secret kept outside the database — is mixed into the stored login proof, so a stolen database alone can't be attacked offline.
+- A **pepper** — a server secret kept outside the database — is mixed into the stored login proof, so the login proofs in a stolen database can't be used to test guesses. Your locked key sits beside them and can be guessed against offline, so a long password is what protects it.
 - **AES-GCM** (your browser's built-in `crypto.subtle`) encrypts content and detects tampering. Every encryption uses a fresh random 12-byte IV.
 - **Master-key indirection:** your content is encrypted with a random master key; that key is locked by your password-derived key. Changing your password re-locks one small key instead of re-encrypting everything.
 - On the web, the unlocked master key is held only in your browser tab's session storage and cleared when the tab closes.
@@ -67,11 +67,11 @@ Those folder files are not encrypted; that's what makes them readable. They're p
 
 **Technical detail — and an honest correction**
 
-Today the folder works in Chrome and Edge on a computer (File System Access API); sync runs on login, logout or on demand, and imports external edits and new files back into the encrypted store. Until 1 October 2026 an "Awaken Server" option also kept a plain copy of those files on our server — which meant we could have read them. We found it in our own review and removed it the same day: the server routes were deleted, the one affected folder was erased, and devices on the old setting moved to Awaken Cloud automatically.
+Today the folder works in Chrome and Edge on a computer (File System Access API); sync runs on login, logout or on demand, and imports external edits and new files back into the encrypted store. In the beta version, before 1 October 2026, an early "Awaken Server" option also kept a plain copy of those files on our server. Our own review flagged it and we removed it the same day: the server routes were deleted, the one affected folder was erased, and devices on the old setting moved to Awaken Cloud automatically. We list it here because being honest about our own history is part of this standard.
 
 ### What happens in the Android and iPhone apps?
 
-Our native apps are being built now and aren't released yet. The design they're built to: after you log in, the unlocked key stays on that phone, sealed inside the phone's own secure hardware. By default the app opens straight in, which means **your phone's screen lock is your journal's lock**. If you want more, turn on **Lock app** and Awaken asks for your fingerprint, face or PIN every time. The key never leaves the phone and is never backed up to any cloud. We'll re-verify this section against the real apps before they ship.
+Our Android and iPhone apps are built and being prepared for release on Google Play and the App Store. How they work: after you log in, the unlocked key stays on that phone, sealed inside the phone's own secure hardware. By default the app opens straight in, which means **your phone's screen lock is your journal's lock**. If you want more, turn on **Lock app** and Awaken asks for your fingerprint, face or PIN every time. The key never leaves the phone and is never backed up to any cloud. We'll re-verify this section against the real apps before they ship.
 
 ### What if I forget my password?
 
@@ -203,5 +203,5 @@ The legal versions of all this: [Privacy Policy](https://everythingawaken.com/jo
 ## Change log
 
 - **1 October 2026** — Encryption code, test vectors and independent checker published on [GitHub](https://github.com/Everything-Awaken/awaken-journal-security).
-- **1 October 2026** — First public edition. Privacy Protocol v1.1, Security Protocol v1.2. Same day: the Notes "Awaken Server" plain copy found and removed (Part 1, Notes); the full list of what we can see completed; minimum age set at 14.
+- **1 October 2026** — First public edition. Privacy Protocol v1.1, Security Protocol v1.2. Same day: the beta-version Notes "Awaken Server" plain copy caught in our own review and removed (Part 1, Notes); the full list of what we can see completed; minimum age set at 14.
 We re-verify this page against our code at every app release and every change to either protocol, and update the date at the top when we do.
