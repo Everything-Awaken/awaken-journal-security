@@ -71,7 +71,7 @@ Today the folder works in Chrome and Edge on a computer (File System Access API)
 
 ### What happens in the Android and iPhone apps?
 
-Our Android and iPhone apps are built and being prepared for release on Google Play and the App Store. How they work: after you log in, the unlocked key stays on that phone, sealed inside the phone's own secure hardware. By default the app opens straight in, which means **your phone's screen lock is your journal's lock**. If you want more, turn on **Lock app** and Awaken asks for your fingerprint, face or PIN every time. The key never leaves the phone and is never backed up to any cloud. We'll re-verify this section against the real apps before they ship.
+Our Android app is available on Google Play, and our iPhone app is being prepared for the App Store. How they work: after you log in, the unlocked key stays on that phone, sealed inside the phone's own secure hardware. By default the app opens straight in, which means **your phone's screen lock is your journal's lock**. If you want more, turn on **Lock app** and Awaken asks for your fingerprint, face or PIN every time. The key never leaves the phone and is never backed up to any cloud. We'll re-verify this section against the real apps before they ship.
 
 ### What if I forget my password?
 
